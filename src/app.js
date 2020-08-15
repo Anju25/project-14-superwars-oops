@@ -24,10 +24,13 @@ const PLAYERS = [
 // Player Class
 class Player {
     constructor(id, name, type) {
+        this.id=id;
+        this.name=name;
+        this.type=type;
+        this.strength=getRandomStrength();
         // Create member variables and assign values
         // Type your code
-
-    }
+     }
 
     // getting random strength
     getRandomStrength = () => {
@@ -36,6 +39,17 @@ class Player {
 
     // Create a player for displaying
     view = () => {
+        let player=[];
+        for (var i=0;i<PLAYERS.length;i++)
+        {
+           let arr=( <div id="class">
+                        <h3>${player[i].id}</h3>
+                        <h3>${player[i].name}</h3>
+                        <h3>${player[i].type}</h3>
+            </div>
+            );
+            players.push(arr);
+        }
         // Accumulate HTML template
         // Type your code here
 
@@ -47,11 +61,17 @@ class Player {
 // Superwar Class
 class Superwar {
     constructor(players) {
-    // Create a field players 
+        let players=players.map(function (item,index,array)
+        {
+            return (players.name,players.id,players.type);
+        });
+
+   // Create a field players 
     // Use Map method to loop through players argument and create new players
     // Type your code here
 
     }
+    player=new Superwar(players);
 
     // Display players in HTML
     viewPlayers = () => {
